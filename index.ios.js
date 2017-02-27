@@ -51,6 +51,15 @@ const {
     height: deviceHeight
 } = Dimensions.get('window');
 
+/**
+ * [getXYParticle description]
+ * @method getXYParticle
+ * @param  {[type]}      total  [description]
+ * @param  {[type]}      i      [description]
+ * @param  {[type]}      radius [description]
+ * @return {[type]}             [description]
+ * @author jackfiallos
+ */
 function getXYParticle(total, i, radius) {
     const angle = ( (2*Math.PI) / total ) * i;
     const x = Math.round((radius*2) * Math.cos(angle - (Math.PI/2)));
@@ -61,10 +70,25 @@ function getXYParticle(total, i, radius) {
     };
 }
 
+/**
+ * [getRandomInt description]
+ * @method getRandomInt
+ * @param  {[type]}     min [description]
+ * @param  {[type]}     max [description]
+ * @return {[type]}         [description]
+ * @author jackfiallos
+ */
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+/**
+ * [shuffleArray description]
+ * @method shuffleArray
+ * @param  {[type]}     array [description]
+ * @return {[type]}           [description]
+ * @author jackfiallos
+ */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -83,7 +107,7 @@ class AnimatedCircle extends Component {
 
         return React.createElement(AnimatedShape, React.__spread({},  this.props, {d: path}));
     }
-)
+}
 
 export default class ExplodingHeart extends Component {
     constructor(props) {
@@ -238,7 +262,7 @@ export default class ExplodingHeart extends Component {
             </View>
         );
     }
-});
+};
 
 const styles = StyleSheet.create({
     container: {
